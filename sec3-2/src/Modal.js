@@ -5,15 +5,15 @@ class Modal extends Component {
         super();
     }
 
-    componentDidMount() {
+/*     componentDidMount() {
         this.timer = setInterval(() => {
             console.log("MountTimer");
         }, 500);
-    }
+    } */
 
     componentWillUnmount() {
         console.log("Modal to be unmounted");
-        clearInterval(this.timer);
+        //clearInterval(this.timer);
     }
 
     render() {

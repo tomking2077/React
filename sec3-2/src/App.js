@@ -62,10 +62,10 @@ class App extends Component {
   }
 
   getCityWeather = (city) => {
-    //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=e312dbeb8840e51f92334498a261ca1d`;
-    const url = 'http://optimum-single0.hosting.blockapps.net/bloc/v2.2/users';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=e312dbeb8840e51f92334498a261ca1d`;
+    //const url = 'http://optimum-single0.hosting.blockapps.net/bloc/v2.2/users';
     axios.get(url).then(resp => {
-      console.log(resp);
+      console.log(resp.data);
       this.setState({
         temp: resp.data.main.temp,
         feels_like: resp.data.main.feels_like,
