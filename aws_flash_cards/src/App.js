@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Quizbar from './components/QuizBar.js';
+import FlashCard from './components/FlashCard.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      cardStyle: "Random",
+      ready: false,
+    }
+  }
+
+  userChoice = (_cardStyle) => {
+    this.setState({
+      cardStyle: _cardStyle,
+      ready: false
+    });
+  }
+
+
+  nowReady = () => {
+    this.setState({
+      ready: true
+    });
+  }
+
+  render() {
+    //console.log(this.state.cardStyle);
+    return (
+      <div className="App align-items-center d-flex" >
+        <div className="container">
+          <Quizbar userChoice={this.userChoice} />
+          <FlashCard cardStyle={this.state.cardStyle} nowReady={this.nowReady} ready={this.state.ready} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
