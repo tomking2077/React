@@ -83,7 +83,7 @@ class FlashCard extends Component {
         return (
             <div>
                 <div className="row align-items-center card-holder">
-                    <div onClick={this.flip} className={`col-sm-5 offset-sm-3 card mb-3 ${this.state.flipClass}`}>
+                    <div onClick={this.flip} className={`col-sm-6 offset-sm-3 card mb-3 ${this.state.flipClass}`}>
                         {card}
 
                     </div>
