@@ -13,10 +13,10 @@ const LogIn = () => <h1>Log in</h1>;
 function App() {
   return (
     <Router>
-      <NavBar />
+      <Route path="/" component={NavBar} />
       <Route exact path="/" component={Home} />
-      <Route exact path="/" render={() => {
-        return <Home title="Hello" />
+      <Route exact path="/" render={(props) => {
+        return <Home title="Hello" history={props.history} match={props.match} />
       }} />
       <Route path="/host" component={Host} />
       <Route path="/help" component={Help} />
